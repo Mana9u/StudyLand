@@ -1,5 +1,9 @@
 package org.example.Dto;
 
+import lombok.Data;
+import java.time.LocalTime;
+
+@Data
 public class User {
 
     /**
@@ -8,19 +12,34 @@ public class User {
     private String name;
 
     /**
-     * User Age
+     * User Pw
      */
-    private String age;
+    private String pw;
 
     /**
-     * User Phone Number
+     * User Email
      */
-    private String phoneNumber;
+    private String email;
 
     /**
-     * User Address
+     * Create Datetime
      */
-    private String address;
+    private LocalTime createDatetime;
+
+    /**
+     * Create User
+     */
+    private String createUser;
+
+    /**
+     * Update Datetime
+     */
+    private LocalTime updateDatetime;
+
+    /**
+     * Update User
+     */
+    public String updateUser;
 
     // getter-setter
     public void setName(String name){
@@ -31,27 +50,30 @@ public class User {
         return this.name;
     }
 
-    public void setAge(String age){
-        this.age = age;
+    public void setPw(String pw){
+        this.pw = pw;
     }
 
-    public String getAge() {
-        return this.age;
-    }
+    public String getPw() { return this.pw; }
 
-    public void setPhoneNumber(String phoneNumber){
-        this.phoneNumber = phoneNumber;
-    }
+    public void setEmail(String email){ this.email = email;}
 
-    public String getPhoneNumber() {
-        return this.phoneNumber;
-    }
+    public String getEmail() { return this.email;}
 
-    public void setAddress(String address){
-        this.address = address;
-    }
+    public void setCreateDatetime(LocalTime createDatetime) { this.createDatetime = createDatetime; }
 
-    public String getAddress() {
-        return this.address;
-    }
+    public LocalTime getCreateDatetime(String createDatetime) { return this.createDatetime; }
+
+    public void setCreateUser(String createUser) { this.createUser = createUser; }
+
+    public String getCreateUser(String createUser) { return this.createUser; }
+
+    public void setUpdateDatetime(LocalTime updateDatetime) { this.updateDatetime = updateDatetime; }
+
+    public LocalTime getUpdateDatetime(String updateDatetime) { return this.updateDatetime; }
+
+    public void setUpdateUser(String updateUser) { this.updateUser = updateUser; }
+
+    public String getUpdateUser(String updateUser) { return this.updateUser; }
+
 }
