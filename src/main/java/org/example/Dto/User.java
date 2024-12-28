@@ -3,22 +3,22 @@ package org.example.Dto;
 public class User {
 
     /**
-     * 이름
+     * User Name
      */
     private String name;
 
     /**
-     * 나이
+     * User Age
      */
     private String age;
 
     /**
-     * 전화번호
+     * User Phone Number
      */
     private String phoneNumber;
 
     /**
-     * 주소
+     * User Address
      */
     private String address;
 
