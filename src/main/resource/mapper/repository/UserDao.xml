@@ -44,5 +44,4 @@
         WHERE
             user_id = #{employeeId}
     </select>
-
 </mapper>
