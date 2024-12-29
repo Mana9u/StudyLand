@@ -1,11 +1,15 @@
 package org.example.Dao;
 
-import org.springframework.stereotype.Repository;
+import org.example.Dto.User;
 import org.apache.ibatis.annotations.Param;
 
-@Repository
-public class UserDao {
-    public String selectUser(@Param("userId") String userId) {
-        return "SELECT * FROM USER WHERE USER_ID = #{userId}";
-    }
+import java.util.List;
+
+
+public interface UserDao {
+    // 모든 레코트 조회
+    List<User> selectAll();
+
+    // id로 레코트 조회
+    List<User> selectById(@Param("id") int id);
 }
