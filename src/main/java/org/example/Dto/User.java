@@ -7,19 +7,29 @@ import java.time.LocalTime;
 public class User {
 
     /**
+     * User List No
+     */
+    private int userListNo;
+
+    /**
+     * User ID
+     */
+    private int userId;
+
+    /**
      * User Name
      */
-    private String name;
+    private String userName;
 
     /**
      * User Pw
      */
-    private String pw;
+    private String userPw;
 
     /**
      * User Email
      */
-    private String email;
+    private String userEmail;
 
     /**
      * First Time Pw Flag
@@ -47,21 +57,29 @@ public class User {
     public String updateUser;
 
     // getter-setter
-    public void setName(String name){ this.name = name; }
+    public void setUserListNo(int userListNo){ this.userListNo = userListNo; }
 
-    public String getName() { return this.name; }
+    public int getUserListNo() { return this.userListNo; }
 
-    public void setPw(String pw){ this.pw = pw; }
+    public void setUserId(int userId){ this.userId = userId; }
 
-    public String getPw() { return this.pw; }
+    public int getUserId() { return this.userId; }
+
+    public void setUserName(String userName){ this.userName = userName; }
+
+    public String getUserName() { return this.userName; }
+
+    public void setUserPw(String userPw){ this.userPw = userPw; }
+
+    public String getUserPw() { return this.userPw; }
+
+    public void setUserEmail(String userEmail){ this.userEmail = userEmail; }
+
+    public String getUserEmail() { return this.userEmail; }
 
     public void setFirstTimePwFlg(String firstTimePwFlg){ this.firstTimePwFlg = firstTimePwFlg; }
 
     public String getFirstTimePwFlg() { return this.firstTimePwFlg; }
-
-    public void setEmail(String email){ this.email = email; }
-
-    public String getEmail() { return this.email; }
 
     public void setCreateDatetime(LocalTime createDatetime) { this.createDatetime = createDatetime; }
 
