@@ -16,6 +16,7 @@
         <result property="updateUser" column="update_user" />
     </resultMap>
 
+    <!-- 컬럼 정의 -->
     <sql id="columns">
         o.user_list_no,
         o.user_id,
@@ -29,10 +30,12 @@
         o.update_user
     </sql>
 
+    <!-- 쿼리 정의 -->
     <select id="getAll" resultMap="userMap">
         SELECT * FROM mst_user
     </select>
 
+    <!-- 쿼리 정의 -->
     <select id="selectById" resultMap="userMap">
         SELECT
             <include refid="columns"/>
