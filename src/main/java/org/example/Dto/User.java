@@ -22,6 +22,11 @@ public class User {
     private String email;
 
     /**
+     * First Time Pw Flag
+     */
+    private String firstTimePwFlg;
+
+    /**
      * Create Datetime
      */
     private LocalTime createDatetime;
@@ -42,23 +47,21 @@ public class User {
     public String updateUser;
 
     // getter-setter
-    public void setName(String name){
-        this.name = name;
-    }
+    public void setName(String name){ this.name = name; }
 
-    public String getName() {
-        return this.name;
-    }
+    public String getName() { return this.name; }
 
-    public void setPw(String pw){
-        this.pw = pw;
-    }
+    public void setPw(String pw){ this.pw = pw; }
 
     public String getPw() { return this.pw; }
 
-    public void setEmail(String email){ this.email = email;}
+    public void setFirstTimePwFlg(String firstTimePwFlg){ this.firstTimePwFlg = firstTimePwFlg; }
 
-    public String getEmail() { return this.email;}
+    public String getFirstTimePwFlg() { return this.firstTimePwFlg; }
+
+    public void setEmail(String email){ this.email = email; }
+
+    public String getEmail() { return this.email; }
 
     public void setCreateDatetime(LocalTime createDatetime) { this.createDatetime = createDatetime; }
 

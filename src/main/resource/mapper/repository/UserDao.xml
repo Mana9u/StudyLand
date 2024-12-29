@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course.apispringbootmybatis.infrastructure.mapper.EmployeeMapper">
+
+    <!-- 取得結果とDtoとのマッピング定義-->
+    <resultMap id="employeeMap" type="EmployeeDto">
+        <id property="employeeId" column="EMP_EMPLOYEE_ID"/>
+        <result property="employeeName" column="EMP_EMPLOYEE_NAME"/>
+        <result property="gender" column="EMP_GENDER"/>
+        <result property="department" column="EMP_DEPARTMENT_ID" />
+        <association property="personal" javaType="PersonalDto">
+            <id property="employeeId" column="PD_EMPLOYEE_ID"/>
+            <result property="birthday" column="PD_BIRTHDAY"/>
+            <result property="telephoneNumber" column="PD_TELEPHONE_NUMBER"/>
+            <result property="mailAddress" column="PD_MAIL_ADDRESS"/>
+        </association>
+        <collection property="historyList" ofType="HistoryDto">
+            <!-- 複合主キー -->
+            <id property="startDate" column="HST_START_DATE"/>
+            <id property="employeeId" column="HST_EMPLOYEE_ID"/>
+            <id property="departmentId" column="HST_DEPARTMENT_ID"/>
+            <result property="content" column="HST_CONTENT"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectById" resultMap="employeeMap">
+        SELECT
+        EMP.EMPLOYEE_ID as EMP_EMPLOYEE_ID,
+        EMP.EMPLOYEE_NAME as EMP_EMPLOYEE_NAME,
+        EMP.GENDER as EMP_GENDER,
+        EMP.DEPARTMENT_ID as EMP_DEPARTMENT_ID,
+        PD.EMPLOYEE_ID as PD_EMPLOYEE_ID,
+        PD.BIRTHDAY as PD_BIRTHDAY,
+        PD.TELEPHONE_NUMBER as PD_TELEPHONE_NUMBER,
+        PD.MAIL_ADDRESS as PD_MAIL_ADDRESS,
+        HST.START_DATE as HST_START_DATE,
+        HST.EMPLOYEE_ID as HST_EMPLOYEE_ID,
+        HST.DEPARTMENT_ID as HST_DEPARTMENT_ID,
+        HST.CONTENT as HST_CONTENT
+        FROM
+        EMPLOYEE EMP
+        LEFT JOIN PERSONAL PD
+        ON
+        EMP.EMPLOYEE_ID = PD.EMPLOYEE_ID
+        LEFT JOIN HISTORY HST
+        ON
+        EMP.EMPLOYEE_ID = HST.EMPLOYEE_ID
+        WHERE
+        EMP.EMPLOYEE_ID = #{employeeId}
+    </select>
+
+</mapper>
