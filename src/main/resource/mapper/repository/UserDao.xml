@@ -42,6 +42,6 @@
         FROM
             mst_user
         WHERE
-            user_id = #{employeeId}
+            user_id = #{userId}
     </select>
 </mapper>

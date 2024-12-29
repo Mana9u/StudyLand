@@ -151,11 +151,12 @@
       <artifactId>jsr305</artifactId>
       <version>3.0.2</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+    <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+    <!-- Dependency for MySQL -->
     <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <version>42.7.4</version>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>9.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.jetbrains</groupId>

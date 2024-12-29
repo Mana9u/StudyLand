@@ -14,7 +14,7 @@ public class User {
     /**
      * User ID
      */
-    private int userId;
+    private String userId;
 
     /**
      * User Name
@@ -61,9 +61,9 @@ public class User {
 
     public int getUserListNo() { return this.userListNo; }
 
-    public void setUserId(int userId){ this.userId = userId; }
+    public void setUserId(String userId){ this.userId = userId; }
 
-    public int getUserId() { return this.userId; }
+    public String getUserId() { return this.userId; }
 
     public void setUserName(String userName){ this.userName = userName; }
 
